@@ -3,24 +3,24 @@
 
 AT+RST				// it resets the esp8266
 
-AT+CWMODE=1
+AT+CWMODE=1			// configuring esp8266 as a station
 
-AT+CWMODE?
+AT+CWMODE?			// query command
 
 AT+CWLAP			//lists all the available access points
 
 AT+CWJAP="ssid","your password"   // this connects your esp8266 wifi module to your home wifi
 
-AT+CWJAP?
+AT+CWJAP?			// to find out to which access point you are connected to
 
 AT+CIPMODE=0
 
-AT+CIPMUX=1
+AT+CIPMUX=1			// multiple tcp/udp connections can be established
 
 AT+CIPSTART=0,"TCP","api.thingspeak.com",80            // connecting to port 80
 
 AT+CIPSEND=0,220
-GET /apps/thingtweet/1/statuses/update?api_key=6E0VD4DXE24BKQVG&status=your tweet msg  
+GET /apps/thingtweet/1/statuses/update?api_key=your generated api key&status=your tweet msg  
 	//for me this get request has to be continuously sent for 3 times to receive a send OK
 
 // A tip : After connecting to wifi just copy paste the commands because there is a time out period and the typing
