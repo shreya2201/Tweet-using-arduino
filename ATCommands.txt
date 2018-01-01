@@ -7,7 +7,7 @@ AT+CWMODE=1
 
 AT+CWMODE?
 
-AT+CWLAP
+AT+CWLAP			//lists all the available access points
 
 AT+CWJAP="ssid","your password"   // this connects your esp8266 wifi module to your home wifi
 
