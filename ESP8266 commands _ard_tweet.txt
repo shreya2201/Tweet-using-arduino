@@ -1,0 +1,27 @@
+//All these commands are to be types on the serial monitor. These AT commands are mostly designed for routers and
+//there are around 200 commands out of which hardly 20 are used in case of esp8266 configuration.
+
+AT+RST				// it resets the esp8266
+
+AT+CWMODE=1
+
+AT+CWMODE?
+
+AT+CWLAP
+
+AT+CWJAP="ssid","your password"   // this connects your esp8266 wifi module to your home wifi
+
+AT+CWJAP?
+
+AT+CIPMODE=0
+
+AT+CIPMUX=1
+
+AT+CIPSTART=0,"TCP","api.thingspeak.com",80            // connecting to port 80
+
+AT+CIPSEND=0,220
+GET /apps/thingtweet/1/statuses/update?api_key=6E0VD4DXE24BKQVG&status=your tweet msg  
+	//for me this get request has to be continuously sent for 3 times to receive a send OK
+
+// A tip : After connecting to wifi just copy paste the commands because there is a time out period and the typing
+// for too long on serial monitor will result in request failure
